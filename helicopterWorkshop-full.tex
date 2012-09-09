@@ -8,6 +8,7 @@
 \usepackage[pdfborder={0,0,0}]{hyperref}
 \usepackage{pdfpages}
 \usepackage[parfill]{parskip}
+\usepackage{wrapfig}
 
 % title
 %\author{Andy Barry}
@@ -17,12 +18,10 @@
 
 %\maketitle
 
-\section*{Helicopter Workshop}
+{\LARGE National University of Malaysia / UTM Helicopter Workshop}
 \hrule
 
-\vspace{20pt}
-
-\subsection*{Main Objectives}
+\section*{Main Objectives}
 
 \begin{itemize}
     \item Develop teamwork skills by simultaneously building hardware and software with a group of four people
@@ -35,7 +34,13 @@
     \item Show that learning can be fun; inspire students to learn more on their own and take the skills learned in the workshop to higher levels.
 \end{itemize}
 
-\subsection*{Executive Summary}
+\section*{Executive Summary}
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{figures/S107G.jpg}
+    \caption{S107G micro-helicopter. Image courtesy of FIAP.}
+  \end{center}
+\end{wrapfigure}
 Students work in small teams of approximately four members.  Each team has a computer, breadboard, microprocessor, visible LED light, infrared LED light array, battery pack, amplifier, and small helicopter.  Students start by building a simple circuit that blinks the visible LED to familiarize themselves with the different components and how to program the microprocessor.
 
 Once the students are accustomed to their components and environment, we guide them through the process of building a more complicated circuit that uses an amplifier to power the LED array while explaining why the microprocessor alone is unable to provide enough energy.  As they are working on their circuits, the students learn debugging techniques, such as blinking LEDs at important points in the software and utilizing a mobile phone camera to detect infrared light.
@@ -47,6 +52,18 @@ As teams program their systems to fly, incrementally succeeding at each step (ta
 For a final demonstration of the techniques, each team chooses a more complicated maneuver to fly and programs their system to perform that operation.  During this period, we discuss how feedback could make these systems better, and discuss common ways to implement feedback loops.
 
 The workshop closes with a summary of the vast amount of material covered and a short discussion of how these techniques are applicable to many other systems beyond flight control.
+
+\section*{Workshop in Detail}
+% In just four hour students learn to build circuits, program microprocessors, and write open-loop control software for micro helicopters.
+\subsection*{Step 1: Build a Circuit}
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \includegraphics[width=0.38\textwidth]{figures/400_points_breadboard.jpg}
+    \caption{\label{breadboard}
+        A breadboard. Image courtesy of Oomout Ltd.
+    }
+\end{wrapfigure}
+Assuming no prior knowledge of circuit design or construction, we instruct students on circuit design and construction.  Starting with how to use a breadboard (Figure \ref{breadboard}), and move on to the basic use of a mircoprocessor.  Each group builds a simple circuit and programs their microprocessor to blink a light.
+
 
 
 
