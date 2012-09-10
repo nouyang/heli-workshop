@@ -10,6 +10,11 @@
 \usepackage[parfill]{parskip}
 \usepackage{wrapfig}
 
+\hypersetup{
+    colorlinks=true,       % false: boxed links; true: colored links
+    urlcolor=blue,
+}
+
 % title
 %\author{Andy Barry}
 %\title{}
@@ -22,17 +27,21 @@
 
 {\LARGE National University of Malaysia / UTM Helicopter Workshop}
 \hrule
+Dan Barry --- Head of Faculty, Singularity University \\
+Andy Barry --- Ph.D. Student, Massachusetts Institute of Technology
+\\ \\
+\textbf{\large Sponsored by Malaysian Industry-Government Group for High Technology (MIGHT)}
 
-\section*{Learning Objectives}
+\subsection*{Learning Objectives}
 
 \begin{wrapfigure}{r}{0.5\textwidth}
     \begin{center}
     \includegraphics[width=0.48\textwidth]{figures/S107G.jpg}
-    {\small S107G micro-helicopter. Source: FIAP.}
+    {\small S107G micro-helicopter. Source: \href{http://www.fiap.com.br}{FIAP, S\~ao Paulo, Brazil.}}
     \end{center}
     \vspace{-20pt}
 \end{wrapfigure}
-\textbf{1. Develop teamwork skills by simultaneously building hardware and software with a group of four people.}
+\textbf{1. Develop teamwork skills by building hardware and software with a group of four people.}
 
 This workshop gives students the opportunity to collaborate on both hardware and software design by building circuitry and writing software together.  At each step, students work with each other to debug and improve their designs.  The ultimate goal of autonomous flight keeps students excited and motivated at every step.
 
@@ -40,14 +49,14 @@ This workshop gives students the opportunity to collaborate on both hardware and
 \begin{wrapfigure}{r}{0.5\textwidth}
     \begin{center}
     \includegraphics[width=0.48\textwidth]{figures/fiap_workshop_dan.jpg}
-    {\small Dan consults with students on flight control.  Source: FIAP.}
+    {\small Dan consults with students on flight control.  Source: \href{http://www.fiap.com.br}{FIAP, S\~ao Paulo, Brazil.}}
     \end{center}
     \vspace{-20pt}
 \end{wrapfigure}
 
 \textbf{2. Get past barriers such as, ``I can't build electronics," ``I don't know enough to write a computer program," ``I'm not smart enough to do engineering."}
 
-Our hands-on approach shows students that they can build circuits and write software, regardless of their prior assumptions.  By \textit{doing}, students realize that they can break down large problems (fly a helicopter autonomously) into many small, solvable tasks (add a amplifier, connect the LED array, etc.).  Students leave the workshop able to reflect on their experience, realizing all that they built the entire system.
+Our hands-on approach shows students that they can build circuits and write software, regardless of their prior assumptions.  By \textit{doing}, students realize that they can break down large problems (fly a helicopter autonomously) into many small, solvable tasks (add an amplifier, connect the LED array, etc.).  Students leave the workshop able to reflect on their experience, realizing that they built the entire system themselves.
 
 \vspace{20pt}
 \textbf{3. Learn problem-solving skills that work in a wide variety of math, science, and engineering situations.}
@@ -64,7 +73,7 @@ Microelectronics involve many layers of complexity.  When taken together, the co
 \begin{wrapfigure}{r}{0.5\textwidth}
     \begin{center}
     \includegraphics[width=0.48\textwidth]{figures/fiap_workshop2.jpg}
-    {\small Students build a circuit.  Source: FIAP.}
+    {\small Students build a circuit.  Source: \href{http://www.fiap.com.br}{FIAP, S\~ao Paulo, Brazil.}}
     \end{center}
     \vspace{-20pt}
 \end{wrapfigure}
@@ -78,16 +87,17 @@ Everyday, engineers work through issues on websites, airplanes, cars, and assemb
     \includegraphics[width=0.48\textwidth]{figures/arduino_uno.jpg}
     {\small Microprocessor used to control the helicopters.  Source: Justus Bl\"umer.}
     \end{center}
-    \vspace{-20pt}
+    \vspace{-30pt}
 \end{wrapfigure}
 \textbf{6. Learn to program a microprocessor.}
 
-At first, microprocessors are intimidating.  They can be mysterious chips, programmed in what seems like a mysterious language.  By starting with simple examples, we guide students through an introductory microprocessor programming session, building up to more complicated programs.  At the end of the workshop, students have controlled input/output ports, commanded high-level controllers, implemented loops, conditional statements, and a variety of other constructs. 
+At first, microprocessors are intimidating.  They can be mysterious chips, programmed in what seems like a mysterious language.  By starting with simple examples, we guide students through an introductory microprocessor programming session, building up to more complicated programs.  At the end of the workshop, students have controlled input/output ports, commanded high-level controllers, and implemented loops, conditional statements, and a variety of other constructs. 
 
-\vspace{20pt}
+\newpage
+%\vspace{20pt}
 \textbf{7. Complete and fly an autonomous flight system.}
 
-This workshop, in approximately four hours, guides students from start to finish through building and flying a micro-helicopter via microprocessor control.  Students are able to reflect that they can build something that, even four hours prior, seemed intimidating and impossible.
+The workshop, in approximately four hours, guides students from start to finish through building and flying a micro-helicopter via microprocessor control.  Students are able to reflect that they can build something that, even four hours prior, seemed intimidating and impossible.
 
 \vspace{20pt}
 \begin{wrapfigure}{r}{0.5\textwidth}
@@ -99,7 +109,7 @@ This workshop, in approximately four hours, guides students from start to finish
 \end{wrapfigure}
 \textbf{8. Show that learning can be fun; inspire students to learn more on their own and take the skills learned in the workshop to higher levels.}
 
-Building and programming autonomous flight systems is \textit{fun}.  Students get immediate feedback by as their helicopter jumps off a table, flies into the air, and occasionally crashes to the ground.  Fast iteration promotes creative thinking, new ideas, and innovative logic.  As control code becomes more complicated, students build on their work of just minutes ago to string together complex, dynamic maneuvers.
+Building and programming autonomous flight systems is \textit{fun}.  Students get immediate feedback as their helicopter jumps off a table, flies into the air, and occasionally crashes to the ground.  Fast iteration promotes creative thinking, new ideas, and innovative logic.  As control code becomes more complicated, students build on their work of just minutes ago to string together complex, dynamic maneuvers.
 
 
 
@@ -108,7 +118,7 @@ Building and programming autonomous flight systems is \textit{fun}.  Students ge
 %\begin{wrapfigure}{r}{0.5\textwidth}
 %  \begin{center}
 %    \includegraphics[width=0.48\textwidth]{figures/S107G.jpg}
-%    \caption{S107G micro-helicopter. Source: FIAP.}
+%    \caption{S107G micro-helicopter. Source: \href{http://www.fiap.com.br}{FIAP, S\~ao Paulo, Brazil.}}
 %  \end{center}
 %\end{wrapfigure}
 %Students work in small teams of approximately four members.  Each team has a computer, breadboard, microprocessor, visible LED light, infrared LED light array, battery pack, amplifier, and small helicopter.  Students start by building a simple circuit that blinks the visible LED to familiarize themselves with the different components and how to program the microprocessor.
