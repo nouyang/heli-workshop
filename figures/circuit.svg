@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="circuit.svg">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0.71428572 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.80877 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.76153 : 350.78739 : 1"
+       id="perspective10" />
+    <inkscape:perspective
+       id="perspective3957"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective4213"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="370.3663"
+     inkscape:cy="741.83894"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="849"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="arduino"
+     sodipodi:insensitive="true">
+    <image
+       y="-25.203402"
+       x="-60.174992"
+       id="image3959"
+       height="421.57962"
+       width="632.06079"
+       xlink:href="file:///home/abarry/workshops/git/heli-workshop/figures/arduino_uno.jpg"
+       transform="matrix(0.96687604,0.2552464,-0.2552464,0.96687604,0,0)" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       id="text3594"
+       y="89.489693"
+       x="239.79704"
+       style="font-size:144px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Army;-inkscape-font-specification:Army"
+       xml:space="preserve"
+       transform="matrix(0.99999915,0.00130577,-0.00130577,0.99999915,0,0)"
+       inkscape:transform-center-x="39.080185"
+       inkscape:transform-center-y="-15"><tspan
+         style="font-size:28px;font-family:Andale Mono;-inkscape-font-specification:Andale Mono"
+         y="89.489693"
+         x="239.79704"
+         id="tspan3596"
+         sodipodi:role="line">Pin 8</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:1.01960921;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3598"
+       width="78.772278"
+       height="100.27464"
+       x="574.78668"
+       y="101.52932" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:1.01960921;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect3600"
+       width="69.060638"
+       height="43.255714"
+       x="581.26105"
+       y="54.34127" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 613.1626,201.81374 15.15228,117.17769 125.25892,1.01016 c 0,0 6.06091,94.95434 -4.04061,91.92388 -10.10153,-3.03046 -128.28937,0 -127.27922,-9.09137 1.01015,-9.09138 10.10152,-85.86297 10.10152,-85.86297"
+       id="path3632" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 640.43671,201.81374 56.56855,24.24366 -25.25382,1.01015 43.43656,5.05077 -32.32488,4.04061 21.2132,7.07106 -19.19289,4.04061 14.14213,6.06092"
+       id="path3634" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 621.24382,389.70211 -88.89343,102.02541 91.92388,-1.01015"
+       id="path3636" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 644.47732,477.58538 c 0,4.04061 -2.0203,48.48733 -2.0203,48.48733"
+       id="path3638" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 631.34534,497.78844 36.36549,2.0203"
+       id="path3640" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 688.92404,480.61584 -4.04061,44.44671 19.19289,-36.36549"
+       id="path3642" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 711.14739,480.61584 25.25382,8.08122 -10.10153,8.08122 -11.11168,6.06092 c -8.08122,5.05076 -12.12183,12.12183 -5.05076,15.15229 7.07107,3.03045 13.13198,5.05076 13.13198,5.05076 0,0 2.02031,0 8.08122,0 6.06092,0 -1.01015,1.01015 11.11168,0 12.12183,-1.01015 3.03046,-1.01015 16.16244,-1.01015 13.13198,0 17.17259,-28.28427 17.17259,-28.28427"
+       id="path3644" />
+    <text
+       xml:space="preserve"
+       style="font-size:144px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Army;-inkscape-font-specification:Army"
+       x="599.02051"
+       y="409.90515"
+       id="text3646"><tspan
+         sodipodi:role="line"
+         id="tspan3648"
+         x="599.02051"
+         y="409.90515">led</tspan></text>
+    <g
+       id="g3983"
+       transform="translate(0.71428572,0.71428572)">
+      <path
+         sodipodi:nodetypes="cc"
+         id="path3965"
+         d="m 167.28571,120.21932 0,-73.571424"
+         style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         id="path3967"
+         d="m 139.42857,46.076467 55.71429,0"
+         style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         id="path3969"
+         d="m 150.14285,38.790753 34.28572,0"
+         style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         id="path3971"
+         d="m 159.42857,28.790753 15.71429,0"
+         style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 237.85714,120.21932 0,-52.857138 300,0 0,176.428568 55,0 0,-41.42857"
+       id="path3989" />
+    <image
+       y="67.862183"
+       x="532.26825"
+       id="image4215"
+       height="126.14286"
+       width="164.03493"
+       xlink:href="file:///home/abarry/workshops/git/heli-workshop/figures/nchannelpowerfet_LRG-adafruit.jpg" />
+  </g>
+</svg>
