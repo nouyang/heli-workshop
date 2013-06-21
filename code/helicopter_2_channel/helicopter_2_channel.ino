@@ -1,14 +1,25 @@
+//
+// Ardunio Control of the S107 Helicopter
+//
+// Dervived from: kodek.pde - ver 1.0 - S107G IR packet transmitter
+//
+// Modified by Andrew Barry, Dan Barry, Brandon Vasquez, 2012-2013
+//
+//
+// Usage: attach IR LEDs to pin 13 and use the Serial Monitor to control
+// the helicopter
 
-// kodek.pde - ver 1.0 - S107G IR packet transmitter
-
-#define LED 13 // Pin connected to leds
+#define LED 13 // Pin connected to the infrared leds
 #define TAKEOFF_THROTTLE 110
 #define HOLDING_THROTTLE 58
 #define CHANNEL_A 0
 #define CHANNEL_B 1
 #define DELAY_CONST 50
 
-byte yawCmd, pitchCmd, throttleCmd, trimCmd, channel = CHANNEL_A;
+byte channel = CHANNEL_A;
+
+
+byte yawCmd, pitchCmd, throttleCmd, trimCmd;
 
 /* Setup runs once, when the Arduino starts */
 void setup()
@@ -122,37 +133,6 @@ byte sendPacket(byte yaw,byte pitch,byte throttle,byte trim)
   return((.1-.014296-one*.000688-zero*.000288)*1000); // in ms.
 }
 
-void HoldCommand(int yawIn, int pitchIn, int throttleIn, int delayTime)
-{
-   Serial.println("Holding throttle");
-
-   // Initial conditions
-   //yawCmd = 63;
-   //pitchCmd = 63;
-   //trimCmd = 0;
-
-   int delayAmount = delayTime/DELAY_CONST;
-   int packetDelay;
-
-   while (delayTime > 0) {
-     if (Serial.available() == true) {
-       Serial.println("HOLD COMMAND ABORTED");
-       break;
-     }
-
-     packetDelay = sendPacket(yawIn, pitchIn, throttleIn, trimCmd);
-     delayTime = delayTime - packetDelay;
-     Serial.print("packet delay:");
-     Serial.println(packetDelay);
-
-     delay(packetDelay);
-
-     delay(delayAmount);
-     delayTime = delayTime - delayAmount;
-   }
-   Serial.println("Done holding throttle");
-}
-
 void TestCopter() // Small function that tests the helicopters yaw, pitch and throttle at once
 {
   yawCmd = 15;
@@ -166,6 +146,62 @@ void TestCopter() // Small function that tests the helicopters yaw, pitch and th
   pitchCmd = 63;
 }
 
+
+/*
+ * HoldCommand
+ *  Inputs:
+ *    yawIn: Turn left/right.
+ *      0 = maximum right turn
+ *      63 = no turn
+ *      127 = maximum left turn
+ *
+ *    pitchIn: pitch the helicopter to fly forwards and backwards
+ *      0 = maxmimum forward flight
+ *      63 = hover
+ *      127 = maximum backwards flight
+ *
+ *    throttleIn: speed of the rotors (go up and down or hover)
+ *      0 = no throttle
+ *      77 = apporximate hover throttle
+ *      127 = max throttle (will go up FAST!)
+ *
+ *    holdTime: Time to hold this command for in milliseconds
+ *      0 = do nothing
+ *      500 = hold command for a half second
+ *      1000 = hold for one second
+ *
+ *  Outputs:
+ *      None.
+ *
+ *      
+ * 
+ */
+void HoldCommand(int yawIn, int pitchIn, int throttleIn, int holdTime)
+{
+   Serial.println("Holding throttle");
+
+
+   int delayAmount = holdTime/DELAY_CONST;
+   int packetDelay;
+
+   while (holdTime > 0) {
+     if (Serial.available() == true) {
+       Serial.println("HOLD COMMAND ABORTED");
+       break;
+     }
+
+     packetDelay = sendPacket(yawIn, pitchIn, throttleIn, trimCmd);
+     holdTime = holdTime - packetDelay;
+
+     delay(packetDelay);
+
+     delay(delayAmount);
+     holdTime = holdTime - delayAmount;
+   }
+   Serial.println("Done running hold command");
+}
+
+
 void serialEvent()  // Called every time a command is recieved on the serial port
 {
   char cmd = Serial.read();  // Reads in a command from the serial port
@@ -175,13 +211,13 @@ void serialEvent()  // Called every time a command is recieved on the serial por
 
   switch (cmd) {
     case '0':
-      Serial.print("Killing throttle.");
+      Serial.print("Killing throttle. ");
       throttleCmd = 0;
       yawCmd = 63;
       pitchCmd = 63;
       break;
       
-    case '5': // Attempt at hover throttle?
+    case '5': // Attempt at hover throttle
       Serial.print("Got a throttle command.");
       throttleCmd = 77; // modify this slightly to make it easy to fly
       break;
@@ -194,7 +230,7 @@ void serialEvent()  // Called every time a command is recieved on the serial por
     case '7':
     case '8':
     case '9':
-      Serial.print("Got a throttle command.");
+      Serial.println("Got a throttle command.");
       throttleCmd = atoi(&cmd) * 14;  // Single character, so we can go from 0 to 124 by inputting 0 to 9 in the serial monitor
       break;
 
