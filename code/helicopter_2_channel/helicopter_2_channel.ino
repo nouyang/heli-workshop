@@ -70,20 +70,14 @@ void serialEvent()  // Called every time a command is recieved on the serial por
       
       // Called when a 'b' is received on the serial port
     
-      // ------------------------
-      //    ADD YOUR CODE HERE
-      // ------------------------
       
       // to get you started, here's an example take-off
       HoldCommand(63, 63, 110, 500); // lots of throttle!
       HoldCommand(63, 63, 60, 1000); // hover here
       
-      
-      
-      
       // ------------------------
-      // END OF YOUR CODE SECTION
-      // ------------------------
+      //    ADD YOUR CODE HERE
+      // ------------------------      
       
       
       
