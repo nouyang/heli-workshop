@@ -1,0 +1,231 @@
+\documentclass{beamer}
+
+\usetheme{default} % change these to dramatically change the styling
+\usecolortheme{dove} % this one too
+\setbeamertemplate{navigation symbols}{} % don't use navigation tools on slides
+%\setbeamertemplate{footline}{\scriptsize{\hfill\insertframenumber}\hspace*{5pt}\vspace*{5pt}} 
+
+\title{Lead America Helicopter Workshop}
+\author{Andrew Barry | Computer Science and Artificial Intelligence Laboratory | Massachusetts Institute of Technology}
+\date{}
+
+\usepackage{textcomp}
+\usepackage{multimedia}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage[strict]{changepage}
+\usepackage{biblatex}
+\usepackage{subfigure}
+\usepackage{mathtools}
+
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{ulem}
+\usepackage{extrabeamercmds}
+
+
+%  \textcircled{c} 
+
+%\usebackgroundtemplate{%
+%    \vbox to \paperheight{\hbox to \paperwidth{\hfil\includegraphics[width=1.1in]{../figures/simulatorGridBackground.pdf}}\vfil}
+%}
+
+% --- uncomment for black background ---
+\setbeamertemplate{background canvas}[vertical shading][bottom=black,top=black]
+\setbeamercolor{normal text}{bg=black,fg=white}
+\setbeamercolor{structure}{bg=black, fg=white}
+\setbeamercolor{title}{bg=black, fg=white}
+% --------------------------------------
+
+\bibliography{elib,paper-summaries}
+
+\setcounter{MaxMatrixCols}{20}
+\newcommand{\yaw}{\psi}
+\newcommand{\pitch}{\theta}
+\newcommand{\roll}{\phi}
+
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4em, text badly centered, node distance=3cm, inner sep=0pt]
+    
+\tikzstyle{block} = [rectangle, draw, fill=white, 
+    text width=5em, text centered, rounded corners, minimum height=3em]
+    
+\tikzstyle{blockgray} = [rectangle, draw, fill=gray, 
+    text width=5em, text centered, rounded corners, minimum height=3em]
+    
+\tikzstyle{blockhighlight} = [rectangle, draw, fill=blue!15,
+    text width=5em, text centered, rounded corners, minimum height=3em]
+    
+\tikzstyle{blockhighlight2} = [rectangle, draw, fill=red!15,
+    text width=5em, text centered, rounded corners, minimum height=3em]
+    
+\tikzstyle{blocklonghighlight2} = [rectangle, draw, fill=red!15,
+    text width=7em, text centered, rounded corners, minimum height=3em]
+    
+\tikzstyle{blocklong} = [rectangle, draw, fill=white, 
+    text width=6em, text centered, rounded corners, minimum height=3em]
+    
+\tikzstyle{blocklonglong} = [rectangle, draw, fill=white, 
+    text width=8em, text centered, rounded corners, minimum height=3em]
+    
+\tikzstyle{line} = [draw, -latex']
+
+\tikzstyle{dashedline} = [draw, -latex', dashed]
+
+\tikzstyle{cloud} = [ellipse, draw, fill=white, 
+    text width=5em, text centered, rounded corners, minimum height=3em]
+    
+\tikzstyle{cloudsmall} = [ellipse, draw, fill=white, 
+    text width=4em, text centered, rounded corners, minimum height=3em]%[draw, ellipse,fill=red!20, node distance=3cm, minimum height=2em]
+    
+\tikzstyle{blockhidden} = [rectangle, draw=white, fill=white, 
+    text width=5em, text centered, rounded corners, minimum height=3em, text=white]
+
+\tikzstyle{cross} = [cross/.style={path picture={ 
+  \draw[black](path picture bounding box.south east) -- (path picture bounding box.north west) (path picture bounding box.south west) -- (path picture bounding box.north east);
+}}]
+    
+    
+\begin{document}
+
+\blackframe
+
+% what's in this talk
+%   welcome
+%   who we are
+%       Andy
+%       brandon
+%       evan
+%       Izzy
+%       Harold
+%   what we're doing
+%      helicopters
+%      circuits
+%   how to start
+%       what a breadboard is
+
+
+\fullFrameImage{figures/helicopter/S107G-large.jpg}{
+    \hspace{-22pt}
+    {\Large \textcolor{white}{Lead America + Helicopters}} \\
+    \hspace{-17pt}\textcolor{white}{Andrew Barry} \\
+    \hspace{-17pt}\textcolor{white}{Ph.D. Candidate in Computer Science}
+    \vspace{220pt}
+    \CopyrightText{Image \textcircled{c} 2011, William Warby}
+}
+
+\frame{
+    Today you will:
+    
+    \begin{itemize}\addtolength{\itemsep}{0.5\baselineskip}
+        \item<2-> Learn to fly micro-helicopters
+        \item<3-> Build a circuit to control the helicopters
+        \item<4-> Program autonomous flight maneuvers
+        
+    \end{itemize}
+}
+
+\frame{
+    A few things before we start...
+    \onslide<2->
+    {
+        \vspace{20pt}
+        
+        You'll build your circuit on a breadboard:
+        
+        \includegraphics[width=\textwidth]{figures/parts/breadboard-small.png}
+    }
+}
+
+\frame{
+    
+    \Large Who we are
+}
+
+\frame{
+    \Large Brandon
+    
+    \normalsize
+    \vspace{15pt}
+    \onslide<2->
+    Undergraduate at MIT studying computer science and electrical engineering.
+    
+    \vspace{20pt}
+    
+    \onslide<3->\textbf{Translation}: Brandon will simultaneously:
+    \begin{enumerate}
+        \item<3-> beat you at Starcraft
+        \item<4-> debug your circuit 
+        \item<5-> all while also stepping out for a snack at 7-Eleven
+    \end{enumerate}
+}
+
+\frame{
+    \Large Evan
+    
+    \normalsize
+    \vspace{15pt}
+    
+    Runs a social network analysis company called Proximate (tells event organizers who's meeting each other at their events).
+    
+    \vspace{20pt}
+    
+    \onslide<2->\textbf{He can talk your ear off about}:
+    \begin{enumerate}
+        \item<3-> web software development
+        \item<4-> typography
+        \item<5-> food
+        \item<6-> space
+        \item<7-> maps
+        \item<8-> Wolfram Alpha
+    \end{enumerate}
+}
+
+\frame{
+    \Large Izzy
+    
+    \normalsize
+    \vspace{15pt}
+    Currently pursuing his masters at MIT in Mechanical Engineering, studying the fluid characteristics of flapping flight.
+    
+    \vspace{20pt}
+    
+    \onslide<2->\textbf{Translation}: 
+    \begin{enumerate}
+        \item<3-> runs unbelievably complex fluid simulations
+        \item<4-> retrofitting a swimming-pool sized experimental while he waits
+    \end{enumerate}
+}
+
+\frame{
+    \frametitle{Harold}
+    \begin{overprint}
+    \onslide<2>\includegraphics[width=\textwidth]{figures/people/haroldAnnotated1.pdf}
+    \onslide<3>\includegraphics[width=\textwidth]{figures/people/haroldAnnotated2.pdf}
+    \onslide<4>\includegraphics[width=\textwidth]{figures/people/haroldAnnotated3.pdf}
+    \onslide<5>\includegraphics[width=\textwidth]{figures/people/haroldAnnotated4.pdf}
+    \onslide<6>\includegraphics[width=\textwidth]{figures/people/haroldAnnotated5.pdf}
+    \end{overprint}
+}
+
+\blackframe
+
+
+%\setbeamertemplate{bibliography item}[text]
+%\bibliographystyle{unsrt}
+
+%\bibliography{../PowersMarraBarryGaitDetection}    
+%\bibliographystyle{abbrv}
+
+    
+\end{document}
+
+
