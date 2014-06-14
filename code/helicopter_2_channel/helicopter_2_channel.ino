@@ -13,8 +13,8 @@
 // --- Initial setup code (don't worry about this too much) ---
 #define CHANNEL_A 0
 #define CHANNEL_B 1
+
 byte channel = CHANNEL_A;
-byte yawCmd, pitchCmd, throttleCmd, trimCmd;
 // --- end initial setup code ---
 
 
@@ -23,14 +23,14 @@ byte yawCmd, pitchCmd, throttleCmd, trimCmd;
  * HoldCommand (for your reference)
  *  Inputs:
  *    yawIn: Turn left/right.
- *      0 = maximum right turn
+ *      0 = maximum left turn
  *      63 = no turn
- *      127 = maximum left turn
+ *      127 = maximum right turn
  *
  *    pitchIn: pitch the helicopter to fly forwards and backwards
- *      0 = maxmimum forward flight
+ *      0 = maxmimum backwards flight
  *      63 = hover
- *      127 = maximum backwards flight
+ *      127 = maximum forward flight
  *
  *    throttleIn: speed of the rotors (go up and down or hover)
  *      0 = no throttle
@@ -56,6 +56,138 @@ byte yawCmd, pitchCmd, throttleCmd, trimCmd;
 **/
 
 
+/*
+ * This function is called when the button is pressed.
+ */
+void ButtonPressed()
+{
+  // print to the serial port
+  Serial.println();
+  Serial.println("You hit the button.");
+  Serial.println();
+  
+  
+  // to get you started, here's an example take-off
+  // (uncomment [remove the // ] to try it)
+   
+  //HoldCommand(63, 63, 110, 500); // lots of throttle!
+  //HoldCommand(63, 63, 60, 1000); // hover here
+    
+  // ------------------------
+  //    ADD YOUR CODE HERE
+  // ------------------------
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  //
+  // -----------------------------
+  // Implementation details below!
+  // -----------------------------
+  //
+  
+  
+  
+  
+  
+  
+}
+
+
+byte yawCmd, pitchCmd, throttleCmd, trimCmd;
+
 void serialEvent()  // Called every time a command is recieved on the serial port
 {
   char cmd = Serial.read();  // Reads in a command from the serial port
@@ -66,111 +198,6 @@ void serialEvent()  // Called every time a command is recieved on the serial por
   Serial.println(cmd);
 
   switch (cmd) {
-    case 'b':
-      
-      // Called when a 'b' is received on the serial port
-    
-      
-      // to get you started, here's an example take-off
-      HoldCommand(63, 63, 110, 500); // lots of throttle!
-      HoldCommand(63, 63, 60, 1000); // hover here
-      
-      // ------------------------
-      //    ADD YOUR CODE HERE
-      // ------------------------      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      break;
-    
-    
-    
-    //
-    // Implementation details below!
-    //
-    
-    
     
     case '0':
       Serial.print("Killing throttle. ");
@@ -197,25 +224,25 @@ void serialEvent()  // Called every time a command is recieved on the serial por
       break;
 
     case 'a':  // Causes the helicopter to rotate counter-clockwise
-      yawCmd += 5;
-      Serial.print("Yaw is ");
-      Serial.println(yawCmd);
-      break;
-
-    case 'd':  // Causes the helicopter to rotate clockwise
       yawCmd -= 5;
       Serial.print("Yaw is ");
       Serial.println(yawCmd);
       break;
 
+    case 'd':  // Causes the helicopter to rotate clockwise
+      yawCmd += 5;
+      Serial.print("Yaw is ");
+      Serial.println(yawCmd);
+      break;
+
     case 'w':  // Causes the helicopter to pitch forward
-      pitchCmd -= 5;
+      pitchCmd += 5;
       Serial.print("Pitch is ");
       Serial.println(pitchCmd);
       break;
 
     case 's':  // Causes the helicopter to pitch backwards
-      pitchCmd += 5;
+      pitchCmd -= 5;
       Serial.print("Pitch is ");
       Serial.println(pitchCmd);
       break;
@@ -260,6 +287,7 @@ void serialEvent()  // Called every time a command is recieved on the serial por
 }
 
 #define LED 13 // Pin connected to the infrared leds
+#define BUTTON_INPUT 8
 #define TAKEOFF_THROTTLE 110
 #define HOLDING_THROTTLE 58
 #define DELAY_CONST 50
@@ -273,6 +301,11 @@ void setup()
   // set the IR LED pin to be an output, take it to 0 volts
   pinMode(LED,OUTPUT);
   digitalWrite(LED,LOW);
+  
+  // configure the button input to be a pullup,
+  // so we can connect the pin through the button
+  // to ground
+  pinMode(BUTTON_INPUT, INPUT_PULLUP);
 
   // initialize global command variables to be neutral.
   yawCmd = 63; // yaw: 0-127, 63 is no yaw
@@ -300,6 +333,9 @@ void setup()
  */
 byte sendPacket(byte yaw,byte pitch,byte throttle,byte trim)
 {
+  pitch = 127-pitch; // reverse pitch so fowards is higher numbers
+  yaw = 127-yaw; // reverse yaw to that left is lower and right is higher numbers
+  
   static byte markL, countP, countR, one, zero, flag;
   static bool data;
   static const byte maskB[] = {1,2,4,8,16,32,64,128};
@@ -399,9 +435,9 @@ void TestCopter() // Small function that tests the helicopters yaw, pitch and th
  *      127 = maximum left turn
  *
  *    pitchIn: pitch the helicopter to fly forwards and backwards
- *      0 = maxmimum forward flight
+ *      0 = maxmimum backwards flight
  *      63 = hover
- *      127 = maximum backwards flight
+ *      127 = maximum forwards flight
  *
  *    throttleIn: speed of the rotors (go up and down or hover)
  *      0 = no throttle
@@ -421,27 +457,53 @@ void TestCopter() // Small function that tests the helicopters yaw, pitch and th
  */
 void HoldCommand(int yawIn, int pitchIn, int throttleIn, int holdTime)
 {
-   Serial.println("Holding throttle");
+  // print out status messages to the serial port
+  Serial.print("HoldingCommand running:\n\t-----------------------------------------\n");
+  Serial.print("\tYaw\tPitch\tThrottle\tTime (ms)\n\t-----------------------------------------\n\t");
+  Serial.print(yawIn);
+  Serial.print("\t");
+  Serial.print(pitchIn);
+  Serial.print("\t");
+  Serial.print(throttleIn);
+  Serial.print("\t\t");
+  Serial.println(holdTime);
 
+  // initialize variables
+  int delayAmount = holdTime/DELAY_CONST;
+  int packetDelay;
 
-   int delayAmount = holdTime/DELAY_CONST;
-   int packetDelay;
+  // loop until we're done holding the command
+  while (holdTime > 0) {
+    
+    // check to see if we should abort because of a message
+    // on the serial port
+    if (Serial.available() == true) {
+      
+      // abort
+      Serial.println("HOLD COMMAND ABORTED");
+      break;
+    }
 
-   while (holdTime > 0) {
-     if (Serial.available() == true) {
-       Serial.println("HOLD COMMAND ABORTED");
-       break;
-     }
+    // send a packet to the heliocopter containing the command
+    // we're holding
+    packetDelay = sendPacket(yawIn, pitchIn, throttleIn, trimCmd);
+    
+    // remember how long we've held this for and subtract
+    // from our total time
+    holdTime = holdTime - packetDelay;
 
-     packetDelay = sendPacket(yawIn, pitchIn, throttleIn, trimCmd);
-     holdTime = holdTime - packetDelay;
+    // wait until the next packet
+    delay(packetDelay);
 
-     delay(packetDelay);
-
-     delay(delayAmount);
-     holdTime = holdTime - delayAmount;
-   }
-   Serial.println("Done running hold command");
+    // delay a bit more
+    delay(delayAmount);
+    holdTime = holdTime - delayAmount;
+  }
+  
+  // print out that we're done
+  Serial.println("done.");
+  Serial.println();
+  
 }
 
 
@@ -452,5 +514,10 @@ void loop()
     // and runs if there is data at the serial port
 
     delay(sendPacket(yawCmd,pitchCmd,throttleCmd,trimCmd));
+    
+    // check the button (we check for LOW since we've configured it to be pulled high)
+    if (digitalRead(BUTTON_INPUT) == LOW) {
+      ButtonPressed();
+    }
 }
 
