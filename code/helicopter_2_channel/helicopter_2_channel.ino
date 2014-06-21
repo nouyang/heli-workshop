@@ -3,7 +3,7 @@
 //
 // Dervived from: kodek.pde - ver 1.0 - S107G IR packet transmitter
 //
-// Modified by Andrew Barry, Dan Barry, Brandon Vasquez, 2012-2013
+// Modified by Andrew Barry, Dan Barry, Brandon Vasquez, Jacob Izraelevitz 2012-2014
 //
 //
 // Usage: attach IR LEDs to pin 13 and use the Serial Monitor to control
@@ -34,7 +34,7 @@ byte channel = CHANNEL_A;
  *
  *    throttleIn: speed of the rotors (go up and down or hover)
  *      0 = no throttle
- *      60 = apporximate hover throttle
+ *      65 = approximate hover throttle
  *      127 = max throttle (will go up FAST!)
  *
  *    holdTime: Time to hold this command for in milliseconds
@@ -48,7 +48,7 @@ byte channel = CHANNEL_A;
  *  Example:
  *      Hover for one half of a second
  *        HoldCommand(63, 63, 77, 500)
- *          63; don't turn left or rightn
+ *          63; don't turn left or right
  *          63: don't move forward or backwards
  *          60: approximate hover throttle
  *          500: do this for 500ms (aka half a second)
@@ -69,9 +69,11 @@ void ButtonPressed()
   
   // to get you started, here's an example take-off
   // (uncomment [remove the // ] to try it)
+  // HoldCommand takes 4 numbers - yaw (0 to 127), pitch (0 to 127), throttle (0 to 127), time to hold (in milliseconds)
    
+  // REMINDER: HoldCommand(yaw, pitch, throttle, time)
   //HoldCommand(63, 63, 110, 500); // lots of throttle!
-  //HoldCommand(63, 63, 60, 1000); // hover here
+  //HoldCommand(63, 63, 65, 1000); // hover here
     
   // ------------------------
   //    ADD YOUR CODE HERE
@@ -248,16 +250,16 @@ void serialEvent()  // Called every time a command is recieved on the serial por
       break;
 
     case 'u':  // Causes the helicopter to inc in throttle
-      if (throttleCmd < 255 - 3) {
-        throttleCmd += 3;
+      if (throttleCmd < 255 - 6) {
+        throttleCmd += 6;
       }
       Serial.print("Throttle is ");
       Serial.println(throttleCmd);
       break;
 
     case 'j':  // Causes the helicopter to dec in throttle
-      if (throttleCmd > 3) {
-        throttleCmd -= 3;
+      if (throttleCmd > 6) {
+        throttleCmd -= 6;
       }
       Serial.print("Trottle is ");
       Serial.println(throttleCmd);
