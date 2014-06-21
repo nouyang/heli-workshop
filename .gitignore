@@ -1,0 +1,9 @@
+*.log
+*.aux
+*.bcf
+*.nav
+*.out
+*.run.xml
+*.snm
+*.toc
+introslides/introslides2014.pdf
