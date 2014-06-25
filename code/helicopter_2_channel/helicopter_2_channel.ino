@@ -67,13 +67,14 @@ void ButtonPressed()
   Serial.println();
   
   
-  // to get you started, here's an example take-off
-  // (uncomment [remove the // ] to try it)
   // HoldCommand takes 4 numbers - yaw (0 to 127), pitch (0 to 127), throttle (0 to 127), time to hold (in milliseconds)
    
   // REMINDER: HoldCommand(yaw, pitch, throttle, time)
-  //HoldCommand(63, 63, 110, 500); // lots of throttle!
-  //HoldCommand(63, 63, 65, 1000); // hover here
+  
+  //HoldCommand(63, 63, 110, 500); // example take-off
+                                   // start with lots of throttle!
+                                   
+  //HoldCommand(63, 63, 65, 1000); // hover for 1 second
     
   // ------------------------
   //    ADD YOUR CODE HERE
@@ -201,6 +202,8 @@ void serialEvent()  // Called every time a command is recieved on the serial por
 
   switch (cmd) {
     
+    case 'O':
+    case 'o':
     case '0':
       Serial.print("Killing throttle. ");
       throttleCmd = 0;
@@ -225,30 +228,35 @@ void serialEvent()  // Called every time a command is recieved on the serial por
       throttleCmd = atoi(&cmd) * 14;  // Single character, so we can go from 0 to 124 by inputting 0 to 9 in the serial monitor
       break;
 
+    case 'A':
     case 'a':  // Causes the helicopter to rotate counter-clockwise
       yawCmd -= 5;
       Serial.print("Yaw is ");
       Serial.println(yawCmd);
       break;
 
+    case 'D':
     case 'd':  // Causes the helicopter to rotate clockwise
       yawCmd += 5;
       Serial.print("Yaw is ");
       Serial.println(yawCmd);
       break;
 
+    case 'W':
     case 'w':  // Causes the helicopter to pitch forward
       pitchCmd += 5;
       Serial.print("Pitch is ");
       Serial.println(pitchCmd);
       break;
 
+    case 'S':
     case 's':  // Causes the helicopter to pitch backwards
       pitchCmd -= 5;
       Serial.print("Pitch is ");
       Serial.println(pitchCmd);
       break;
 
+    case 'U':
     case 'u':  // Causes the helicopter to inc in throttle
       if (throttleCmd < 255 - 6) {
         throttleCmd += 6;
@@ -257,6 +265,7 @@ void serialEvent()  // Called every time a command is recieved on the serial por
       Serial.println(throttleCmd);
       break;
 
+    case 'J':
     case 'j':  // Causes the helicopter to dec in throttle
       if (throttleCmd > 6) {
         throttleCmd -= 6;
@@ -265,6 +274,7 @@ void serialEvent()  // Called every time a command is recieved on the serial por
       Serial.println(throttleCmd);
       break;
 
+    case 'C':
     case 'c':  // Changes the channel A = 0, B = 1
       Serial.println("Changing channel");
       if (channel == 1) {
@@ -274,6 +284,7 @@ void serialEvent()  // Called every time a command is recieved on the serial por
       }
       break;
 
+    case 'R':
     case 'r':  // Reset
       Serial.println("Resetting yaw and pitch");
       yawCmd = 63;
