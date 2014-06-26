@@ -37,7 +37,8 @@
 %}
 
 % --- uncomment for black background ---
-\setbeamertemplate{background canvas}[vertical shading][bottom=black,top=black]
+%\setbeamertemplate{background canvas}[vertical shading][bottom=black,top=black]
+\setbeamercolor{background canvas}{bg=black}
 \setbeamercolor{normal text}{bg=black,fg=white}
 \setbeamercolor{structure}{bg=black, fg=white}
 \setbeamercolor{title}{bg=black, fg=white}
@@ -131,19 +132,30 @@
 
 \frame{
     
-    {\Large What if you crash?}
+    {\Large What if I crash?}
+    
+    \vspace{20pt}
+    
+    \onslide<2->{\hspace{20pt} \textbf{\LARGE Trust me, you will.}}
     
 }
 
-\fullFrameImage{figures/movie-snaps/delta-outdoors/atLaunchWithTether.jpg}{}
+\fullFrameImageScaled{figures/glamor/fullPlane.jpg}{}
 
-\fullFrameImage{figures/forest2.jpg}{\CopyrightText{\textbf{\textcircled{c} 2014 Scott Wylie}}}
 
-\fullFrameMovieAvi[noloop]{videos/crashes/deltawing/HUD-flip-1x-crash-c}
+\fullFrameMovieAvi[noloop]{videos/crashes/full-crashes-prophang-just-one-c}
 
-\fullFrameMovieAvi[noloop]{videos/crashes/jun02-horz9-cut-c}
+\fullFrameMovieAvi[noloop]{videos/crashes/full-crashes-prophang-just-one-c}
 
-\fullFrameMovieAvi[noloop]{videos/knife-edge/knife-edge-horz-cut-c}
+\fullFrameMovieAvi{videos/crashes/full-crashes-prophang-all-but-first-c}
+
+\fullFrameMovieAvi[noloop]{videos/prophang/prophang_LQRe5}
+
+%\fullFrameMovieAvi[noloop]{videos/crashes/deltawing/HUD-flip-1x-crash-c}
+
+%\fullFrameMovieAvi[noloop]{videos/crashes/jun02-horz9-cut-c}
+
+%\fullFrameMovieAvi[noloop]{videos/knife-edge/knife-edge-horz-cut-c}
 
 
 \frame{
