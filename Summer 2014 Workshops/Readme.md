@@ -1,7 +1,7 @@
 # quickstart
-Buy materials listed on the Bill of Materials
-Follow the HelicopterWorkshopHandout.pdf
-Make an RC helicopter fly in a box-shape automatically
+* Buy materials listed on the Bill of Materials
+* Follow the HelicopterWorkshopHandout.pdf
+* Make an RC helicopter fly in a box-shape automatically
 
 # Introduction
 This was a four-hour workshop designed for high school students to go
@@ -15,47 +15,32 @@ run this helicopter workshop for roughly 1500 students across the US.
 # Bill of Materials
 Listed by product name, followed by example US source and cost in USD
 
-Arduino microprocessor (Uno) *
-[ http://www.robotmesh.com/arduino-uno-rev3 ]
+1. Arduino microprocessor (Uno) *
+( http://www.robotmesh.com/arduino-uno-rev3 )
 $25
-
-USB cable 
-http://www.robotmesh.com/sparkfun-cerberus-usb-cable-6ft
+2. USB cable 
+(http://www.robotmesh.com/sparkfun-cerberus-usb-cable-6ft)
 $2.55
-
-Helicopter and controller
+1. Helicopter and controller
+( http://www.banggood.com/Wholesale-Genuine-Syma-S107-S107G-3-Channel-Infrared-Remote-Control-Helicopter-With-GYRO-p-36759.html?currency=USD )
 !! Make sure to select US warehouse, which is $22, instead of China warehouse, which is $20, if you are short on time !!
-[ http://www.banggood.com/Wholesale-Genuine-Syma-S107-S107G-3-Channel-Infrared-Remote-Control-Helicopter-With-GYRO-p-36759.html?currency=USD ]
 $22 
-
-Breadboard (mini style)
-[
-http://www.robotmesh.com/400-tie-point-interlocking-solderless-breadboard
-]
+2. Breadboard (mini style)
+( http://www.robotmesh.com/400-tie-point-interlocking-solderless-breadboard)
 $2.90
-
-IR LED array 
+3. IR LED array 
 ??
-
-Amplifier 
-
-
-LED light and resistor (between 499 ohms and 1000 ohms inclusive should be
+4. Amplifier 
+5. LED light and resistor (between 499 ohms and 1000 ohms inclusive should be
 fine) 
-http://www.robotmesh.com/5mm-led-pack-6-pcs
+(http://www.robotmesh.com/5mm-led-pack-6-pcs)
 $0.50
-
-AA Battery holder (holds six batteries)
-
-9V battery snap 
-
-AA Batteries
-
-Small pushbutton (2 lead)
-
-A small fan 
-
-A few male-male breadboard jumper wires 
+6. AA Battery holder (holds six batteries)
+7. 9V battery snap 
+9. AA Batteries
+10. Small pushbutton (2 lead)
+11. A small fan 
+12. A few male-male breadboard jumper wires 
 
 * We selected the Uno as it is the default chosen in the Arduino IDE so
 we do not have to have students select the correct board in Arduino.
@@ -65,7 +50,7 @@ However any other Arduino microcontroller should work well.
 Don't skip the helicopter flying steps -- they are spaced so that the
 helicopter batteries have time to charge
 
-Yes, they should be missing a battery at the beginning
+Yes, they should be missing a battery and a controller at the beginning
 
 Try to explain to students their is a big difference between working
 together as a group with one person at doing the physical work and
